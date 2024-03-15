@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome to my Rails App</title>
+  <%= stylesheet_link_tag 'user_index', media: 'all', 'data-turbolinks-track': 'reload' %>
+</head>
+	<body>
+		<header>
+		  <h1>Welcome to my Rails App</h1>
+		</header>
+
+		<div class="container">
+		  <%= link_to "Sign Up", register_path, class: "button" %>
+		  <%= link_to "Log In", login_new_path, class: "button" %>
+		</div>
+
+		<footer>
+		  <p>&copy; 2024 BlogAPP. All rights reserved.</p>
+		</footer>
+	</body>
+</html>

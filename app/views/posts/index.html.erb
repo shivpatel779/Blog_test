@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>List of Posts</title>
+      <%= stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
+    </head>
+    <body>
+
+        <h1>List of Posts</h1>
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Content</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @posts.each do |post| %>
+                <tr>
+                  <td><%= post.title %></td>
+                  <td><%= post.content %></td>
+                  <td>
+                    <%= button_to "Destroy", post_path(post.id, user_id: params[:user_id]), method: :delete, class: "btn btn-danger" %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="btn-container">
+          <%= link_to "Create Post", new_post_path(params[:user_id]), class: "btn" %>
+          <%= button_to "Logout", logout_path(user_id: params[:user_id]), method: :delete, class: "btn btn-danger" %>
+        </div>
+
+    </body>
+</html>
+
